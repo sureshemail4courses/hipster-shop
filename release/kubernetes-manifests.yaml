@@ -267,12 +267,13 @@ kind: Service
 metadata:
   name: frontend-external
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: frontend
   ports:
   - name: http
     port: 80
+    nodePort: 32355
     targetPort: 8080
 ---
 apiVersion: apps/v1
